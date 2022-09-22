@@ -17,11 +17,13 @@ Dropzone1.addEventListener('dragleave', function (e) {
 
     e.preventDefault();
 })
-
+let less = document.getElementsByClassName('box');
+document.getElementById('count1').innerHTML = less.length
+let counter = less.length;
 for (var i = 0; i < dragItems.length; i++) {
     dragItems[i].addEventListener('dragstart', function (e) {
         e.dataTransfer.setData('drag', this.id)
-        document.getElementById('count1').innerHTML = this.id
+        document.getElementById('count1').innerHTML = --counter;
     })
 
 }
